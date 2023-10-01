@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} REGISTER {% endblock %}
+
+{% block content %}
+
+<div class="header-bar">
+    <h1>REGISTER</h1>
+</div>
+
+<div class="card-body">
+    <div class="login-register-form">
+        <p class="span">Owl camera focus giúp bạn tăng sự tập trung trong học tập và làm việc</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label>{{ form.username.label}}</label>
+            {{ form.username }}
+
+            <label>{{ form.password1.label}}</label>
+            {{ form.password1 }}
+
+            <label>{{ form.password2.label}}</label>
+            {{ form.password2 }}
+
+            <br>
+            <input style="margin-top: 20px;" class="button" type="submit" value="Register">
+        </form>
+        <p><b> Already have an account? <a href="{% url 'login' %}">Login</a></b></p>
+    </div>
+    <div class="greet">
+        <p>Xin chào! <br><br> Owl sẽ đồng hành cùng bạn trong quá trình tăng sự tập trung</p><br>
+    <div>
+</div>
+
+{% endblock %}

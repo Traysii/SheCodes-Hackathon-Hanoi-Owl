@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} LOG IN {% endblock %}
+
+{% block content %}
+ 
+<div class="header-bar">
+    <h1>LOG IN</h1>
+</div>
+
+<div class="card-body">
+    <div class="login-register-form">
+        <!-- <img class="image" src="{% static 'img/image-2.png' %}" alt="image"/> -->
+        <p class="span">Owl camera focus giúp bạn tăng sự tập trung trong học tập và làm việc</p>
+        <div class="login">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="button" type="submit" value="Log In">
+            </form>
+            <p><b> Don't have an account? <a href="{% url 'register' %}">Register</a></b></p>
+        </div>   
+    </div>
+    <div class="greet">
+        <p>Xin chào! <br><br> Owl sẽ đồng hành cùng bạn trong quá trình tăng sự tập trung</p><br>
+        <!-- <p><img class="img" src="{% static 'img/rectangle-38.png' %}" alt="Rectangle" /></p> -->
+    <div>
+</div>
+
+{% endblock %}
